@@ -43,7 +43,7 @@
 
 
 📄 **Modelo Físico (Schema SQL):**  
-[`documentos/modelo-fisico.sql`](docs/modelo-fisico-simples.sql)
+[`documentos/modelo-fisico.sql`](documentos/modelo-fisico-simples.sql)
 
 ### 3.1.1 BD e Models (Semana 5)
 *Descreva aqui os Models implementados no sistema web*
