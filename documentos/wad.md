@@ -41,7 +41,9 @@
 
 *Posicione aqui os diagramas de modelos relacionais do seu banco de dados, apresentando todos os esquemas de tabelas e suas relações. Utilize texto para complementar suas explicações, se necessário.*
 
-*Posicione também o modelo físico com o Schema do BD (arquivo .sql)*
+
+📄 **Modelo Físico (Schema SQL):**  
+[`documentos/modelo-fisico.sql`](docs/modelo-fisico-simples.sql)
 
 ### 3.1.1 BD e Models (Semana 5)
 *Descreva aqui os Models implementados no sistema web*
