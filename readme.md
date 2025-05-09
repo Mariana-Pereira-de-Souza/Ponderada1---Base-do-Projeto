@@ -1,83 +1,119 @@
-# Boilerplate MVC em Node.js com PostgreSQL
 
-Este projeto é um boilerplate básico para uma aplicação Node.js seguindo o padrão MVC (Model-View-Controller), utilizando PostgreSQL como banco de dados.
+# 📌 UniPlanner
 
-## Requisitos
+**UniPlanner** é um sistema web de gerenciamento de tarefas desenvolvido para auxiliar estudantes universitários na organização de suas rotinas acadêmicas e pessoais. O projeto faz parte de uma atividade prática da faculdade e integra frontend, backend e banco de dados em uma única aplicação.
 
-- Node.js (versão X.X.X)
-- PostgreSQL (versão X.X.X)
+---
 
-## Instalação
+## 💡 Descrição do sistema
 
-1. **Clonar o repositório:**
+O sistema escolhido é um **Gerenciador de Tarefas**, com foco em:
 
-```bash
-   git clone https://github.com/seu-usuario/seu-projeto.git
-   cd seu-projeto
+- Cadastro e organização de tarefas por categoria
+- Acompanhamento de status (pendente, em andamento, concluída)
+- Priorização e visualização por data
+- Interface simples e intuitiva
+- Estrutura preparada para integração com lembretes e relatórios de produtividade
+
+O UniPlanner é ideal para quem busca aumentar a produtividade com um sistema leve e objetivo, pensado para uso acadêmico e pessoal.
+
+---
+
+## 📁 Estrutura de Pastas
+
+```plaintext
+meu-projeto/
+│
+├── config/                # Arquivos de configuração (ex: conexão com banco)
+│   └── database.js
+├── controllers/           # Lógica de controle das requisições
+│   └── HomeController.js
+├── models/                # Definição de modelos de dados (estrutura do banco)
+│   └── User.js
+├── routes/                # Definição das rotas do sistema
+│   └── index.js
+├── services/              # Serviços auxiliares do sistema
+│   └── userService.js
+├── assets/                # Arquivos públicos como imagens e fontes
+│   └── modelo-banco.png   # Diagrama do modelo relacional
+├── scripts/               # Arquivos de JavaScript públicos
+├── styles/                # Arquivos CSS públicos
+├── tests/                 # Arquivos de testes unitários
+│   └── example.test.js
+├── .gitignore             # Arquivo para ignorar arquivos no Git
+├── .env.example           # Exemplo de variáveis de ambiente
+├── jest.config.js         # Configuração de testes com Jest
+├── package-lock.json      # Gerenciador de dependências
+├── package.json           # Definições de dependências e scripts
+├── readme.md              # Este documento
+├── schema.sql             # Modelo físico do banco de dados (.sql)
+├── server.js              # Inicialização do servidor
+└── rest.http              # Arquivo opcional para testes de requisições HTTP
+
 ```
 
-2. **Instalar as dependências:**
-    
+## ▶️ Como executar o projeto localmente
+
+### 1. Clone o repositório
+
 ```bash
-npm install
+
+git clone https://github.com/seu-usuario/seu-repositorio.git
+cd seu-repositorio
+
 ```
-    
-3. **Configurar o arquivo `.env`:**
-    
-Renomeie o arquivo `.env.example` para `.env` e configure as variáveis de ambiente necessárias, como as configurações do banco de dados PostgreSQL.
-    
+▶️ Como executar o projeto localmente
 
-Configuração do Banco de Dados
-------------------------------
+1. Clone o repositório
 
-1. **Criar banco de dados:**
-    
-    Crie um banco de dados PostgreSQL com o nome especificado no seu arquivo `.env`.
-    
-2. **Executar o script SQL de inicialização:**
-    
-```bash
-npm run init-db
-```
-    
-Isso criará a tabela `users` no seu banco de dados PostgreSQL com UUID como chave primária e inserirá alguns registros de exemplo.
-    
+    ```bash
+    git clone https://github.com/seu-usuario/seu-repositorio.git
+    cd seu-repositorio
+    ```
 
-Funcionalidades
----------------
+2. Instale as dependências
 
-* **Padrão MVC:** Estrutura organizada em Model, View e Controller.
-* **PostgreSQL:** Banco de dados relacional utilizado para persistência dos dados.
-* **UUID:** Utilização de UUID como chave primária na tabela `users`.
-* **Scripts com `nodemon`:** Utilização do `nodemon` para reiniciar automaticamente o servidor após alterações no código.
-* **Testes:** Inclui estrutura básica para testes automatizados.
+    ```bash
+    npm install
+    ```
 
-Scripts Disponíveis
--------------------
+3. Configure as variáveis de ambiente
 
-* `npm start`: Inicia o servidor Node.js.
-* `npm run dev`: Inicia o servidor com `nodemon`, reiniciando automaticamente após alterações no código.
-* `npm run test`: Executa os testes automatizados.
-* `npm run test:coverage`: Executa os testes e gera um relatório de cobertura de código.
+    Crie um arquivo `.env` baseado em `.env.example` e preencha com suas credenciais:
 
-Estrutura de Diretórios
------------------------
+    ```ini
+    DB_HOST=localhost
+    DB_USER=root
+    DB_PASSWORD=sua_senha
+    DB_NAME=uniplanner
+    ```
 
-* **`config/`**: Configurações do banco de dados e outras configurações do projeto.
-* **`controllers/`**: Controladores da aplicação (lógica de negócio).
-* **`models/`**: Modelos da aplicação (definições de dados e interações com o banco de dados).
-* **`routes/`**: Rotas da aplicação.
-* **`tests/`**: Testes automatizados.
-* **`views/`**: Views da aplicação (se aplicável).
+4. Importe o banco de dados
 
-Contribuição
-------------
+    No seu SGBD (como MySQL ou MariaDB), execute o conteúdo do arquivo `schema.sql` localizado na raiz do projeto.
 
-Contribuições são bem-vindas! Sinta-se à vontade para abrir um issue ou enviar um pull request.
+5. Inicie o servidor
 
-Licença
--------
+    ```bash
+    npm start
+    ```
 
-Este projeto está licenciado sob a Licença MIT.
+    A aplicação estará disponível em:  
+    👉 [http://localhost:3000](http://localhost:3000)
 
-Este README.md fornece uma visão geral clara do boilerplate, incluindo instruções de instalação, configuração do banco de dados, funcionalidades principais, scripts disponíveis, estrutura de diretórios, como contribuir e informações de licença. Certifique-se de personalizar as seções com detalhes específicos do seu projeto conforme necessário.
+---
+
+🛠 **Tecnologias utilizadas**
+
+- Node.js
+- Express
+- MySQL
+- HTML, CSS, JavaScript
+- Git e GitHub
+
+---
+
+📌 **Licença**
+
+Este projeto está licenciado sob a MIT License.
+
