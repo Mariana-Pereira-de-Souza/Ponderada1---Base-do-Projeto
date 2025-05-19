@@ -161,7 +161,10 @@ Neste contexto, o modelo relacional apresentado tem como objetivo estruturar o b
 <img src="../assets/modelo-banco.png" width="100%">
 </div>
 
-'''
+<div align="center">
+<sub> Figura x - Modelagem Física </sub>
+<img src="../assets/modelo-fisico-simples.png" width="100%">
+</div>
 
 📄 **Modelo Físico (Schema SQL):**  
 [`documentos/modelo-fisico.sql`](modelo-fisico-simples.sql)
