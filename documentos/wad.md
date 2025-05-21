@@ -52,7 +52,6 @@ No projeto **UniPlanner**, as personas foram criadas com base em perfis comuns d
 <sub> Figura x - Persona 3 </sub>
 <img src="../assets/beatriz.png" width="100%">
 </div>
----
 
 
 ### 2.2. User Stories (Semana 01 - opcional)
@@ -73,7 +72,6 @@ No projeto **UniPlanner**, as personas foram criadas com base em perfis comuns d
 |                      | _**Small**_: Pode ser dividido entre backend e frontend.                                     |
 |                      | _**Testável**_: Testável com login/cadastro válidos e inválidos.                             |
 
----
 
 ### US02 — Criação de Tarefas
 
@@ -91,8 +89,6 @@ No projeto **UniPlanner**, as personas foram criadas com base em perfis comuns d
 |                      | _**Small**_: Pode ser entregue em partes: interface, validação, banco.                      |
 |                      | _**Testável**_: Deve permitir testes de criação e exibição de tarefas.                      |
 
----
-
 ### US03 — Visualização de Tarefas por Categoria
 
 | Identificação        | US03                                                                                         |
@@ -109,7 +105,6 @@ No projeto **UniPlanner**, as personas foram criadas com base em perfis comuns d
 |                      | _**Small**_: Pode ser fracionado entre backend e frontend.                                  |
 |                      | _**Testável**_: Filtragem pode ser testada com dados reais e simulados.                     |
 
----
 
 ### US04 — Edição e Exclusão de Tarefas
 
@@ -127,7 +122,6 @@ No projeto **UniPlanner**, as personas foram criadas com base em perfis comuns d
 |                      | _**Small**_: Pode ser feito em pequenos componentes.                                        |
 |                      | _**Testável**_: Testável com alteração e remoção de dados.                                  |
 
----
 
 ### US05 — Notificações de Prazos
 
@@ -146,7 +140,6 @@ No projeto **UniPlanner**, as personas foram criadas com base em perfis comuns d
 |                      | _**Testável**_: Pode ser testado com tarefas simuladas.                                     |
 
 
----
 
 ## <a name="c3"></a>3. Projeto da Aplicação Web
 
