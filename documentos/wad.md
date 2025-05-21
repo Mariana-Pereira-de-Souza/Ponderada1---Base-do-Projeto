@@ -31,87 +31,27 @@ O UniPlanner será composto por três principais componentes: Frontend (interfac
 ### 2.1. Personas (Semana 01 - opcional)
 
 
+Uma **persona** é uma representação fictícia de um usuário ideal do sistema, baseada em dados reais, comportamentos, motivações e objetivos. Ela ajuda a orientar o desenvolvimento de soluções mais eficazes, centradas nas necessidades reais dos usuários. Ao criar personas, desenvolvedores e designers conseguem tomar decisões mais assertivas em relação à experiência de uso e funcionalidades da aplicação.
 
-## 👤 Personas
+#### 🎯 Persona no contexto do UniPlanner
 
-### 👩 Mariana Andrade
-- **Idade:** 18 anos  
-- **Mora em:** Belo Horizonte - MG  
-- **Profissão:** Estudante universitária  
-- **Educação:** Ensino Superior (em andamento)  
-- **Formação:** Engenharia de Software (1º período)  
-- **Status:** Solteira  
-- **Hobby:** Maratonar séries e jogar online  
-- **Personalidade:** Proativa, ansiosa e conectada  
-
-**🗣️ Frase que a representa:**  
-_"Preciso de algo que me ajude a lembrar de tudo sem surtar."_
-
-**📌 Biografia:**  
-Mariana acabou de ingressar na faculdade e ainda está se adaptando à vida universitária. Tem dificuldades com organização e prazos, pois tenta conciliar estudos, vida social e autocuidado. Sente-se sobrecarregada com tantas tarefas e atividades.
-
-**🎯 Necessidades e Expectativas:**  
-Precisa de uma ferramenta intuitiva para organizar suas tarefas, prazos e compromissos. Espera lembretes úteis e categorização clara das tarefas.
-
-**🔥 Motivações:**  
-Deseja se destacar na faculdade e organizar sua rotina para ter tempo livre com tranquilidade.
-
-**💢 Pontos de dor:**  
-Esquecimento de prazos, sobrecarga de tarefas, ansiedade por acúmulo de atividades.
+No projeto **UniPlanner**, as personas foram criadas com base em perfis comuns de estudantes universitários que enfrentam desafios para manter a organização da rotina acadêmica. Elas foram pensadas para guiar o desenvolvimento do sistema, garantindo que a solução atenda às principais dores, necessidades e expectativas desses usuários.
 
 
-### 👨 Lucas Ferreira
-- **Idade:** 24 anos  
-- **Mora em:** São Paulo - SP  
-- **Profissão:** Estagiário de TI  
-- **Educação:** Ensino Superior (em andamento)  
-- **Formação:** Ciência da Computação (7º período)  
-- **Status:** Namorando  
-- **Hobby:** Programar e jogar RPG de mesa  
-- **Personalidade:** Focado, metódico, prático  
+<div align="center">
+<sub> Figura x - Persona 1 </sub>
+<img src="../assets/mariana.png" width="100%">
+</div>
 
-**🗣️ Frase que o representa:**  
-_"Tudo tem seu tempo, é só saber planejar."_
+<div align="center">
+<sub> Figura x - Persona 2 </sub>
+<img src="../assets/lucas.png" width="100%">
+</div>
 
-**📌 Biografia:**  
-Lucas trabalha durante o dia e estuda à noite. É muito organizado e gosta de ter tudo sob controle. Usa agendas e apps para manter sua produtividade. Acredita que ferramentas digitais podem otimizar sua rotina.
-
-**🎯 Necessidades e Expectativas:**  
-Quer um sistema que seja rápido, funcional e que integre facilmente suas tarefas de trabalho e estudos.
-
-**🔥 Motivações:**  
-Busca melhorar sua produtividade e não esquecer compromissos importantes.
-
-**💢 Pontos de dor:**  
-Sente-se frustrado com ferramentas lentas ou desorganizadas. Perde tempo com tarefas manuais repetitivas.
-
-
-### 👩 Beatriz Souza
-- **Idade:** 21 anos  
-- **Mora em:** Recife - PE  
-- **Profissão:** Estudante de Design Gráfico  
-- **Educação:** Ensino Superior (em andamento)  
-- **Formação:** Design Gráfico (5º período)  
-- **Status:** Solteira  
-- **Hobby:** Desenhar e editar vídeos  
-- **Personalidade:** Criativa, sensível, organizada visualmente  
-
-**🗣️ Frase que a representa:**  
-_"Se não for visual, não funciona pra mim!"_
-
-**📌 Biografia:**  
-Beatriz tem facilidade com arte e design, mas dificuldades em lidar com organização textual e prazos. Precisa de uma ferramenta com apelo visual que estimule sua criatividade e facilite a visualização das tarefas.
-
-**🎯 Necessidades e Expectativas:**  
-Busca uma interface clara, com cores e categorias visuais para se orientar melhor nas atividades diárias.
-
-**🔥 Motivações:**  
-Quer equilibrar prazos com projetos criativos e manter a produtividade sem abrir mão de sua linguagem visual.
-
-**💢 Pontos de dor:**  
-Ferramentas sem apelo visual ou com excesso de texto. Perde foco com interfaces desorganizadas.
-
----
+<div align="center">
+<sub> Figura x - Persona 3 </sub>
+<img src="../assets/beatriz.png" width="100%">
+</div>
 
 
 ### 2.2. User Stories (Semana 01 - opcional)
@@ -132,7 +72,6 @@ Ferramentas sem apelo visual ou com excesso de texto. Perde foco com interfaces 
 |                      | _**Small**_: Pode ser dividido entre backend e frontend.                                     |
 |                      | _**Testável**_: Testável com login/cadastro válidos e inválidos.                             |
 
----
 
 ### US02 — Criação de Tarefas
 
@@ -150,8 +89,6 @@ Ferramentas sem apelo visual ou com excesso de texto. Perde foco com interfaces 
 |                      | _**Small**_: Pode ser entregue em partes: interface, validação, banco.                      |
 |                      | _**Testável**_: Deve permitir testes de criação e exibição de tarefas.                      |
 
----
-
 ### US03 — Visualização de Tarefas por Categoria
 
 | Identificação        | US03                                                                                         |
@@ -168,7 +105,6 @@ Ferramentas sem apelo visual ou com excesso de texto. Perde foco com interfaces 
 |                      | _**Small**_: Pode ser fracionado entre backend e frontend.                                  |
 |                      | _**Testável**_: Filtragem pode ser testada com dados reais e simulados.                     |
 
----
 
 ### US04 — Edição e Exclusão de Tarefas
 
@@ -186,7 +122,6 @@ Ferramentas sem apelo visual ou com excesso de texto. Perde foco com interfaces 
 |                      | _**Small**_: Pode ser feito em pequenos componentes.                                        |
 |                      | _**Testável**_: Testável com alteração e remoção de dados.                                  |
 
----
 
 ### US05 — Notificações de Prazos
 
@@ -205,7 +140,6 @@ Ferramentas sem apelo visual ou com excesso de texto. Perde foco com interfaces 
 |                      | _**Testável**_: Pode ser testado com tarefas simuladas.                                     |
 
 
----
 
 ## <a name="c3"></a>3. Projeto da Aplicação Web
 
@@ -220,7 +154,10 @@ Neste contexto, o modelo relacional apresentado tem como objetivo estruturar o b
 <img src="../assets/modelo-banco.png" width="100%">
 </div>
 
-'''
+<div align="center">
+<sub> Figura x - Modelagem Física </sub>
+<img src="../assets/modelo-fisico-simples.png" width="100%">
+</div>
 
 📄 **Modelo Físico (Schema SQL):**  
 [`documentos/modelo-fisico.sql`](modelo-fisico-simples.sql)
