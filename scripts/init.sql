@@ -34,3 +34,13 @@ VALUES
   ('Samuel Perez', 'samuel.perez@example.com'),
   ('Tara Scott', 'tara.scott@example.com');
 
+  CREATE TABLE tarefas (
+  id SERIAL PRIMARY KEY,
+  nome TEXT NOT NULL,
+  descricao TEXT,
+  status TEXT DEFAULT 'pendente',
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
