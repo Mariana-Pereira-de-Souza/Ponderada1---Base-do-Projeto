@@ -163,7 +163,45 @@ Neste contexto, o modelo relacional apresentado tem como objetivo estruturar o b
 [`documentos/modelo-fisico.sql`](modelo-fisico-simples.sql)
 
 ### 3.1.1 BD e Models (Semana 5)
-*Descreva aqui os Models implementados no sistema web*
+
+No projeto **UniPlanner**, o banco de dados foi desenvolvido utilizando **PostgreSQL**, com foco em armazenar e organizar tarefas acadêmicas de forma prática e eficiente. O sistema segue a arquitetura MVC (Model-View-Controller), onde a camada **Model** é responsável por definir as estruturas de dados e interagir diretamente com o banco.
+
+A biblioteca `pg` do Node.js foi utilizada para realizar as conexões e executar as queries, utilizando `async/await` para garantir operações assíncronas e seguras.
+
+
+ Models implementados
+
+ 🔸 Model: Tarefa
+
+Representa as tarefas que o usuário pode cadastrar no sistema. Cada tarefa inclui informações como título, descrição, status de andamento e datas de criação e modificação.
+
+**Nome da tabela:** `tarefas`
+
+**Campos:**
+
+| Campo       | Tipo         | Descrição                                      |
+|-------------|--------------|------------------------------------------------|
+| id          | SERIAL       | Identificador único da tarefa (chave primária)|
+| nome        | TEXT         | Nome/título da tarefa                          |
+| descricao   | TEXT         | Descrição detalhada da tarefa                  |
+| status      | TEXT         | Situação atual da tarefa (ex: pendente, em andamento, concluída) |
+| created_at  | TIMESTAMP    | Data e hora em que a tarefa foi criada         |
+| updated_at  | TIMESTAMP    | Data e hora da última atualização da tarefa    |
+
+
+
+ **Estrutura SQL do Model**
+
+```sql
+CREATE TABLE tarefas (
+  id SERIAL PRIMARY KEY,
+  nome TEXT NOT NULL,
+  descricao TEXT,
+  status TEXT,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP
+);
+```
 
 ### 3.2. Arquitetura (Semana 5)
 
@@ -220,8 +258,6 @@ No contexto do UniPlanner, esses endpoints são responsáveis por gerenciar as *
 Esses endpoints representam a **camada de Controller** da arquitetura MVC, servindo como ponte entre o banco de dados (Model) e a interface (View).
 
 A seguir, a descrição detalhada de cada endpoint implementado na API:
-
----
 
 ### 🔹 POST /tarefas
 
