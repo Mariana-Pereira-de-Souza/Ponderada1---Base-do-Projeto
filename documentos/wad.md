@@ -191,7 +191,113 @@ Neste contexto, o modelo relacional apresentado tem como objetivo estruturar o b
 
 ### 3.6. WebAPI e endpoints (Semana 05)
 
-*Utilize um link para outra página de documentação contendo a descrição completa de cada endpoint. Ou descreva aqui cada endpoint criado para seu sistema.*  
+## 3.6. WebAPI e Endpoints (Semana 05)
+
+A WebAPI do **UniPlanner** foi desenvolvida utilizando a arquitetura RESTful, permitindo que aplicações clientes (como o frontend, ou ferramentas como o Insomnia e Postman) realizem requisições HTTP para manipular os dados da aplicação. Cada funcionalidade principal do sistema é exposta através de **endpoints**, que seguem padrões claros de rota, método e formato de dados.
+
+No contexto do UniPlanner, esses endpoints são responsáveis por gerenciar as **tarefas** que os usuários cadastram, visualizam, atualizam e excluem. Os dados são trafegados em formato **JSON**, e o backend interage com o banco de dados PostgreSQL utilizando **consultas SQL puras com a biblioteca `pg`** do Node.js.
+
+Esses endpoints representam a **camada de Controller** da arquitetura MVC, servindo como ponte entre o banco de dados (Model) e a interface (View).
+
+A seguir, a descrição detalhada de cada endpoint implementado na API:
+
+---
+
+### 🔹 POST /tarefas
+
+**Descrição:** Cria uma nova tarefa no sistema.
+
+**Corpo da requisição (JSON):**
+
+```json
+{
+  "nome": "Estudar Banco de Dados",
+  "descricao": "Revisar comandos SQL e relacionamento entre tabelas"
+}
+```
+Resposta de sucesso (201 Created):
+
+```json
+{
+  "id": 1,
+  "nome": "Estudar Banco de Dados",
+  "descricao": "Revisar comandos SQL e relacionamento entre tabelas",
+  "status": null,
+  "created_at": "2025-05-20T15:00:00.000Z",
+  "updated_at": null
+}
+```
+### 🔹  GET /tarefas
+
+**Descrição:** Retorna a lista de todas as tarefas cadastradas no sistema.
+
+**Resposta de sucesso (200 OK):**
+
+```json
+
+[
+  {
+    "id": 1,
+    "nome": "Estudar Banco de Dados",
+    "descricao": "Revisar comandos SQL e relacionamento entre tabelas",
+    "status": null,
+    "created_at": "2025-05-20T15:00:00.000Z",
+    "updated_at": null
+  }
+]
+```
+### 🔹  PUT /tarefas/:id
+
+**Descrição:** Atualiza uma tarefa existente com base no id informado.
+
+**Parâmetros de rota:**
+- id: ID da tarefa a ser atualizada.
+
+**Corpo da requisição (JSON):**
+```json
+
+{
+  "nome": "Estudar Banco de Dados - Aula 5",
+  "descricao": "Praticar relacionamentos no Supabase",
+  "status": "em andamento"
+}
+
+```
+**Resposta de sucesso (200 OK):**
+```json
+
+{
+  "id": 1,
+  "nome": "Estudar Banco de Dados - Aula 5",
+  "descricao": "Praticar relacionamentos no Supabase",
+  "status": "em andamento",
+  "created_at": "2025-05-20T15:00:00.000Z",
+  "updated_at": "2025-05-21T10:30:00.000Z"
+}
+
+```
+**Erros possíveis:**
+- 404 Not Found: Caso o ID não corresponda a nenhuma tarefa existente.
+
+### 🔹  DELETE /tarefas/:id
+
+**Descrição:** Exclui uma tarefa existente com base no id.
+
+**Parâmetros de rota:**
+- id: ID da tarefa que será excluída.
+
+**Resposta de sucesso (200 OK):**
+```json
+{
+  "message": "Tarefa excluída com sucesso"
+}
+```
+**Considerações Finais**
+Todos os endpoints acima utilizam o banco de dados PostgreSQL por meio da biblioteca pg com async/await para execução de queries, garantindo um desempenho assíncrono e seguro.
+
+Os dados são enviados e recebidos no formato JSON, permitindo uma integração simples com qualquer frontend ou ferramenta de testes.
+
+Essa API representa a camada de Controller da arquitetura MVC, intermediando a interação entre o banco de dados (Model) e as interfaces que consomem os dados (View).
 
 ### 3.7 Interface e Navegação (Semana 07)
 
