@@ -167,14 +167,36 @@ Neste contexto, o modelo relacional apresentado tem como objetivo estruturar o b
 
 ### 3.2. Arquitetura (Semana 5)
 
-*Posicione aqui o diagrama de arquitetura da sua solução de aplicação web. Atualize sempre que necessário.*
+A arquitetura do projeto **UniPlanner** foi desenvolvida com base no padrão **MVC (Model-View-Controller)**, uma abordagem amplamente utilizada no desenvolvimento de aplicações web por promover a separação de responsabilidades. Essa estrutura facilita a manutenção do código, a escalabilidade do sistema e a organização geral do projeto.
 
-**Instruções para criação do diagrama de arquitetura**  
-- **Model**: A camada que lida com a lógica de negócios e interage com o banco de dados.
-- **View**: A camada responsável pela interface de usuário.
-- **Controller**: A camada que recebe as requisições, processa as ações e atualiza o modelo e a visualização.
+No contexto do UniPlanner — um sistema de organização de tarefas acadêmicas — essa separação é fundamental para permitir que o frontend (interface) se comunique de forma eficiente com o backend (lógica e banco de dados), garantindo uma experiência fluida e funcional para o usuário.
+
+<div align="center">
+<sub> Figura x - Design de Arquitetura </sub>
+<img src="../assets/designdearquitetura.png" width="100%">
+</div>
+
+
+ Componentes da Arquitetura
+
+- **Model**: Responsável por lidar com a lógica de negócio e a comunicação direta com o banco de dados PostgreSQL. No UniPlanner, é onde são feitas as consultas SQL para inserir, listar, atualizar e excluir tarefas.
   
-*Adicione as setas e explicações sobre como os dados fluem entre o Model, Controller e View.*
+- **Controller**: Intermediário entre a View e o Model. Recebe as requisições HTTP (como criar ou listar tarefas), processa os dados (se necessário) e chama os métodos apropriados do Model. Após isso, retorna a resposta para a View ou API.
+  
+- **View**: Responsável por exibir a interface ao usuário, com páginas renderizadas em EJS. É nessa camada que o usuário interage com o sistema, como ao preencher formulários ou visualizar listas de tarefas.
+
+
+Fluxo de Dados
+
+1. O usuário interage com a **View** (ex: envia um formulário de nova tarefa).
+2. A **Controller** recebe essa requisição, valida os dados e chama uma função no **Model**.
+3. O **Model** realiza a operação no banco de dados (ex: `INSERT` ou `SELECT`).
+4. O resultado é enviado de volta à **Controller**, que então redireciona ou renderiza uma nova **View** com os dados atualizados.
+
+Esse fluxo garante que cada parte da aplicação tenha um papel claro e independente, seguindo os princípios do MVC.
+
+
+A adoção da arquitetura MVC no projeto **UniPlanner** foi essencial para a organização do código e a divisão eficiente de responsabilidades. Ela permitiu que o sistema fosse desenvolvido de forma modular, onde alterações na interface (View) não afetam diretamente a lógica (Model), e vice-versa. Esse padrão torna o UniPlanner mais fácil de manter, escalar e compreender por qualquer outro desenvolvedor que venha a colaborar no projeto.
 
 ### 3.3. Wireframes (Semana 03 - opcional)
 
@@ -190,8 +212,6 @@ Neste contexto, o modelo relacional apresentado tem como objetivo estruturar o b
 *Posicione aqui algumas imagens demonstrativas de seu protótipo de alta fidelidade e o link para acesso ao protótipo completo (mantenha o link sempre público para visualização).*
 
 ### 3.6. WebAPI e endpoints (Semana 05)
-
-## 3.6. WebAPI e Endpoints (Semana 05)
 
 A WebAPI do **UniPlanner** foi desenvolvida utilizando a arquitetura RESTful, permitindo que aplicações clientes (como o frontend, ou ferramentas como o Insomnia e Postman) realizem requisições HTTP para manipular os dados da aplicação. Cada funcionalidade principal do sistema é exposta através de **endpoints**, que seguem padrões claros de rota, método e formato de dados.
 
