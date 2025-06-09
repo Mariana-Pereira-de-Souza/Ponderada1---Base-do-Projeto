@@ -455,7 +455,11 @@ Com dados inseridos, o modal demonstra:
 A interface de categorias utiliza cards visuais para facilitar a identificação e organização das diferentes classificações de tarefas.
 
 #### **Categorias - Grid Completo**
-![Categorias Grid Completo](screenshots/10-categorias-grid.png)
+
+<div align="center">
+<sub> Figura x - Dashboard - Vazio </sub>
+<img src="../assets/categorias-principal.png" width="100%">
+</div>
 
 A visualização de categorias apresenta:
 - **Layout em grid responsivo** adaptando-se ao tamanho da tela
@@ -466,7 +470,11 @@ A visualização de categorias apresenta:
 
 
 #### **Modal Editar Categoria**
-![Modal Editar Categoria](screenshots/13-modal-editar-categoria.png)
+
+<div align="center">
+<sub> Figura x - Dashboard - Vazio </sub>
+<img src="../assets/categorias-especificações.png" width="100%">
+</div>
 
 Na edição de categorias:
 - **Dados pré-carregados** da categoria selecionada
