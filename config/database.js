@@ -1,18 +1,16 @@
-const { Pool } = require('pg');
+const { Sequelize } = require('sequelize');
 require('dotenv').config();
 
-const isSSL = process.env.DB_SSL === 'true';
+const sequelize = new Sequelize(
+  process.env.DB_NAME || 'uniplanner',
+  process.env.DB_USER || 'postgres',
+  process.env.DB_PASSWORD || '12345678910',
+  {
+    host: process.env.DB_HOST || 'localhost',
+    port: process.env.DB_PORT || 5432,
+    dialect: 'postgres',
+    logging: false
+  }
+);
 
-const pool = new Pool({
-  user: process.env.DB_USER,
-  host: process.env.DB_HOST,
-  database: process.env.DB_DATABASE,
-  password: process.env.DB_PASSWORD,
-  port: process.env.DB_PORT,
-  ssl: false,
-});
-
-module.exports = {
-  query: (text, params) => pool.query(text, params),
-  connect: () => pool.connect(),
-};
+module.exports = sequelize;
