@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Uniplanner</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body class="auth-page">
+    <div class="auth-container">
+        <div class="auth-card">
+            <div class="auth-header">
+                <h1>UniPlanner</h1>
+                <p>Faça login para acessar o sistema</p>
+            </div>
+            
+            <% if (error) { %>
+                <div class="alert alert-danger">
+                    <%= error %>
+                </div>
+            <% } %>
+            
+            <form action="/login" method="POST" class="auth-form">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Senha</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary btn-block">Entrar</button>
+                </div>
+            </form>
+            
+            <div class="auth-footer">
+                <p>Use as credenciais: admin@uniplanner.com / admin123</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

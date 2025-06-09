@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %> - Uniplanner</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">UniPlanner</div>
+            <ul>
+                <li><a href="/" class="<%= currentPage === 'tasks' ? 'active' : '' %>">Tarefas</a></li>
+                <li><a href="/users" class="<%= currentPage === 'users' ? 'active' : '' %>">Usuários</a></li>
+                <li><a href="/categories" class="<%= currentPage === 'categories' ? 'active' : '' %>">Categorias</a></li>
+            </ul>
+            <div class="user-info">
+                <% if (user) { %>
+                    <span>Olá, <%= user.name %></span>
+                    <a href="/logout" class="btn btn-outline">Sair</a>
+                <% } else { %>
+                    <a href="/login" class="btn btn-primary">Entrar</a>
+                <% } %>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <%- body %>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Uniplanner</p>
+        </div>
+    </footer>
+
+    <script src="/js/main.js"></script>
+    <% if (script) { %>
+        <script src="/js/<%= script %>.js"></script>
+    <% } %>
+</body>
+</html>
