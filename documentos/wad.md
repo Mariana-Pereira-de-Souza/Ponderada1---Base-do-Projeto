@@ -401,7 +401,11 @@ Quando credenciais inválidas são inseridas, o sistema exibe:
 O dashboard principal é o coração do sistema, onde os usuários gerenciam suas tarefas acadêmicas de forma intuitiva e eficiente.
 
 #### **Dashboard - Visão Geral**
-![Dashboard Visão Geral](screenshots/03-dashboard-geral.png)
+
+<div align="center">
+<sub> Figura x - Dashboard - Visão Geral </sub>
+<img src="../assets/dashboard-principal.png" width="100%">
+</div>
 
 A interface principal apresenta:
 - **Header fixo** com navegação horizontal: logo, menu (Tarefas, Usuários, Categorias) e informações do usuário
@@ -411,7 +415,11 @@ A interface principal apresenta:
 - **Cards de tarefas** com informações completas: título, categoria colorida, descrição, data de vencimento, prioridade e ações
 
 #### **Dashboard - Estado Vazio**
-![Dashboard Estado Vazio](screenshots/06-dashboard-vazio.png)
+
+<div align="center">
+<sub> Figura x - Dashboard - Vazio </sub>
+<img src="../assets/dashboard-vazio.png" width="100%">
+</div>
 
 Quando não há tarefas ou filtros não retornam resultados:
 - **Mensagem informativa** explicando o estado atual
@@ -425,7 +433,12 @@ As operações de criação e edição de tarefas são realizadas através de mo
 
 
 #### **Modal Nova Tarefa - Preenchido**
-![Modal Nova Tarefa Preenchido](screenshots/08-modal-tarefa-preenchido.png)
+
+<div align="center">
+<sub> Figura x - Dashboard - Vazio </sub>
+<img src="../assets/dashboard-editar-tarefa.png" width="100%">
+</div>
+
 
 Com dados inseridos, o modal demonstra:
 - **Validação em tempo real** dos campos obrigatórios
