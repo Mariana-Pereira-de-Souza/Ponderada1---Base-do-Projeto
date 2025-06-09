@@ -163,18 +163,78 @@ Neste contexto, o modelo relacional apresentado tem como objetivo estruturar o b
 [`documentos/modelo-fisico.sql`](modelo-fisico-simples.sql)
 
 ### 3.1.1 BD e Models (Semana 5)
-*Descreva aqui os Models implementados no sistema web*
+
+No projeto **UniPlanner**, o banco de dados foi desenvolvido utilizando **PostgreSQL**, com foco em armazenar e organizar tarefas acadêmicas de forma prática e eficiente. O sistema segue a arquitetura MVC (Model-View-Controller), onde a camada **Model** é responsável por definir as estruturas de dados e interagir diretamente com o banco.
+
+A biblioteca `pg` do Node.js foi utilizada para realizar as conexões e executar as queries, utilizando `async/await` para garantir operações assíncronas e seguras.
+
+
+ Models implementados
+
+ 🔸 Model: Tarefa
+
+Representa as tarefas que o usuário pode cadastrar no sistema. Cada tarefa inclui informações como título, descrição, status de andamento e datas de criação e modificação.
+
+**Nome da tabela:** `tarefas`
+
+**Campos:**
+
+| Campo       | Tipo         | Descrição                                      |
+|-------------|--------------|------------------------------------------------|
+| id          | SERIAL       | Identificador único da tarefa (chave primária)|
+| nome        | TEXT         | Nome/título da tarefa                          |
+| descricao   | TEXT         | Descrição detalhada da tarefa                  |
+| status      | TEXT         | Situação atual da tarefa (ex: pendente, em andamento, concluída) |
+| created_at  | TIMESTAMP    | Data e hora em que a tarefa foi criada         |
+| updated_at  | TIMESTAMP    | Data e hora da última atualização da tarefa    |
+
+
+
+ **Estrutura SQL do Model**
+
+```sql
+CREATE TABLE tarefas (
+  id SERIAL PRIMARY KEY,
+  nome TEXT NOT NULL,
+  descricao TEXT,
+  status TEXT,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP
+);
+```
 
 ### 3.2. Arquitetura (Semana 5)
 
-*Posicione aqui o diagrama de arquitetura da sua solução de aplicação web. Atualize sempre que necessário.*
+A arquitetura do projeto **UniPlanner** foi desenvolvida com base no padrão **MVC (Model-View-Controller)**, uma abordagem amplamente utilizada no desenvolvimento de aplicações web por promover a separação de responsabilidades. Essa estrutura facilita a manutenção do código, a escalabilidade do sistema e a organização geral do projeto.
 
-**Instruções para criação do diagrama de arquitetura**  
-- **Model**: A camada que lida com a lógica de negócios e interage com o banco de dados.
-- **View**: A camada responsável pela interface de usuário.
-- **Controller**: A camada que recebe as requisições, processa as ações e atualiza o modelo e a visualização.
+No contexto do UniPlanner — um sistema de organização de tarefas acadêmicas — essa separação é fundamental para permitir que o frontend (interface) se comunique de forma eficiente com o backend (lógica e banco de dados), garantindo uma experiência fluida e funcional para o usuário.
+
+<div align="center">
+<sub> Figura x - Design de Arquitetura </sub>
+<img src="../assets/designdearquitetura.png" width="100%">
+</div>
+
+
+ Componentes da Arquitetura
+
+- **Model**: Responsável por lidar com a lógica de negócio e a comunicação direta com o banco de dados PostgreSQL. No UniPlanner, é onde são feitas as consultas SQL para inserir, listar, atualizar e excluir tarefas.
   
-*Adicione as setas e explicações sobre como os dados fluem entre o Model, Controller e View.*
+- **Controller**: Intermediário entre a View e o Model. Recebe as requisições HTTP (como criar ou listar tarefas), processa os dados (se necessário) e chama os métodos apropriados do Model. Após isso, retorna a resposta para a View ou API.
+  
+- **View**: Responsável por exibir a interface ao usuário, com páginas renderizadas em EJS. É nessa camada que o usuário interage com o sistema, como ao preencher formulários ou visualizar listas de tarefas.
+
+
+Fluxo de Dados
+
+1. O usuário interage com a **View** (ex: envia um formulário de nova tarefa).
+2. A **Controller** recebe essa requisição, valida os dados e chama uma função no **Model**.
+3. O **Model** realiza a operação no banco de dados (ex: `INSERT` ou `SELECT`).
+4. O resultado é enviado de volta à **Controller**, que então redireciona ou renderiza uma nova **View** com os dados atualizados.
+
+Esse fluxo garante que cada parte da aplicação tenha um papel claro e independente, seguindo os princípios do MVC.
+
+
+A adoção da arquitetura MVC no projeto **UniPlanner** foi essencial para a organização do código e a divisão eficiente de responsabilidades. Ela permitiu que o sistema fosse desenvolvido de forma modular, onde alterações na interface (View) não afetam diretamente a lógica (Model), e vice-versa. Esse padrão torna o UniPlanner mais fácil de manter, escalar e compreender por qualquer outro desenvolvedor que venha a colaborar no projeto.
 
 ### 3.3. Wireframes (Semana 03 - opcional)
 
@@ -191,7 +251,109 @@ Neste contexto, o modelo relacional apresentado tem como objetivo estruturar o b
 
 ### 3.6. WebAPI e endpoints (Semana 05)
 
-*Utilize um link para outra página de documentação contendo a descrição completa de cada endpoint. Ou descreva aqui cada endpoint criado para seu sistema.*  
+A WebAPI do **UniPlanner** foi desenvolvida utilizando a arquitetura RESTful, permitindo que aplicações clientes (como o frontend, ou ferramentas como o Insomnia e Postman) realizem requisições HTTP para manipular os dados da aplicação. Cada funcionalidade principal do sistema é exposta através de **endpoints**, que seguem padrões claros de rota, método e formato de dados.
+
+No contexto do UniPlanner, esses endpoints são responsáveis por gerenciar as **tarefas** que os usuários cadastram, visualizam, atualizam e excluem. Os dados são trafegados em formato **JSON**, e o backend interage com o banco de dados PostgreSQL utilizando **consultas SQL puras com a biblioteca `pg`** do Node.js.
+
+Esses endpoints representam a **camada de Controller** da arquitetura MVC, servindo como ponte entre o banco de dados (Model) e a interface (View).
+
+A seguir, a descrição detalhada de cada endpoint implementado na API:
+
+### 🔹 POST /tarefas
+
+**Descrição:** Cria uma nova tarefa no sistema.
+
+**Corpo da requisição (JSON):**
+
+```json
+{
+  "nome": "Estudar Banco de Dados",
+  "descricao": "Revisar comandos SQL e relacionamento entre tabelas"
+}
+```
+Resposta de sucesso (201 Created):
+
+```json
+{
+  "id": 1,
+  "nome": "Estudar Banco de Dados",
+  "descricao": "Revisar comandos SQL e relacionamento entre tabelas",
+  "status": null,
+  "created_at": "2025-05-20T15:00:00.000Z",
+  "updated_at": null
+}
+```
+### 🔹  GET /tarefas
+
+**Descrição:** Retorna a lista de todas as tarefas cadastradas no sistema.
+
+**Resposta de sucesso (200 OK):**
+
+```json
+
+[
+  {
+    "id": 1,
+    "nome": "Estudar Banco de Dados",
+    "descricao": "Revisar comandos SQL e relacionamento entre tabelas",
+    "status": null,
+    "created_at": "2025-05-20T15:00:00.000Z",
+    "updated_at": null
+  }
+]
+```
+### 🔹  PUT /tarefas/:id
+
+**Descrição:** Atualiza uma tarefa existente com base no id informado.
+
+**Parâmetros de rota:**
+- id: ID da tarefa a ser atualizada.
+
+**Corpo da requisição (JSON):**
+```json
+
+{
+  "nome": "Estudar Banco de Dados - Aula 5",
+  "descricao": "Praticar relacionamentos no Supabase",
+  "status": "em andamento"
+}
+
+```
+**Resposta de sucesso (200 OK):**
+```json
+
+{
+  "id": 1,
+  "nome": "Estudar Banco de Dados - Aula 5",
+  "descricao": "Praticar relacionamentos no Supabase",
+  "status": "em andamento",
+  "created_at": "2025-05-20T15:00:00.000Z",
+  "updated_at": "2025-05-21T10:30:00.000Z"
+}
+
+```
+**Erros possíveis:**
+- 404 Not Found: Caso o ID não corresponda a nenhuma tarefa existente.
+
+### 🔹  DELETE /tarefas/:id
+
+**Descrição:** Exclui uma tarefa existente com base no id.
+
+**Parâmetros de rota:**
+- id: ID da tarefa que será excluída.
+
+**Resposta de sucesso (200 OK):**
+```json
+{
+  "message": "Tarefa excluída com sucesso"
+}
+```
+**Considerações Finais**
+Todos os endpoints acima utilizam o banco de dados PostgreSQL por meio da biblioteca pg com async/await para execução de queries, garantindo um desempenho assíncrono e seguro.
+
+Os dados são enviados e recebidos no formato JSON, permitindo uma integração simples com qualquer frontend ou ferramenta de testes.
+
+Essa API representa a camada de Controller da arquitetura MVC, intermediando a interação entre o banco de dados (Model) e as interfaces que consomem os dados (View).
 
 ### 3.7 Interface e Navegação (Semana 07)
 
