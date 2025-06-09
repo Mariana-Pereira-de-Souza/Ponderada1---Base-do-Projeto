@@ -410,27 +410,6 @@ A interface principal apresenta:
 - **Grid responsivo** organizando tarefas em cards com layout de 3 colunas em desktop
 - **Cards de tarefas** com informações completas: título, categoria colorida, descrição, data de vencimento, prioridade e ações
 
-#### **Dashboard - Card em Destaque**
-![Dashboard Card Destaque](screenshots/04-dashboard-card.png)
-
-Cada card de tarefa apresenta:
-- **Efeito hover** com elevação sutil (transform: translateY(-5px))
-- **Barra colorida** no topo indicando a categoria
-- **Hierarquia visual** clara: título em destaque, descrição secundária
-- **Badges de prioridade** com cores diferenciadas (Alta: vermelho, Média: laranja, Baixa: verde)
-- **Botões de ação** intuitivos: editar (✏️), excluir (🗑️) e marcar como concluída (✅)
-- **Data de vencimento** formatada e destacada quando próxima do prazo
-
-#### **Dashboard - Filtros Ativos**
-![Dashboard Filtros Ativos](screenshots/05-dashboard-filtros.png)
-
-O sistema de filtros oferece:
-- **Filtro por Status**: Todas, Pendentes, Concluídas com atualização instantânea
-- **Filtro por Categoria**: Dropdown dinâmico carregado do banco de dados
-- **Busca textual**: Pesquisa em tempo real por título ou descrição
-- **Combinação de filtros**: Múltiplos filtros podem ser aplicados simultaneamente
-- **Feedback visual**: Cards filtrados com transições suaves de entrada/saída
-
 #### **Dashboard - Estado Vazio**
 ![Dashboard Estado Vazio](screenshots/06-dashboard-vazio.png)
 
@@ -444,15 +423,6 @@ Quando não há tarefas ou filtros não retornam resultados:
 
 As operações de criação e edição de tarefas são realizadas através de modais sobrepostos, mantendo o contexto da página principal.
 
-#### **Modal Nova Tarefa - Vazio**
-![Modal Nova Tarefa Vazio](screenshots/07-modal-tarefa-vazio.png)
-
-O modal de criação apresenta:
-- **Overlay escurecido** focando atenção no formulário
-- **Título claro** "Nova Tarefa" identificando a ação
-- **Formulário estruturado** com campos organizados logicamente
-- **Campos obrigatórios** marcados visualmente
-- **Botões de ação** "Cancelar" e "Salvar" com hierarquia visual clara
 
 #### **Modal Nova Tarefa - Preenchido**
 ![Modal Nova Tarefa Preenchido](screenshots/08-modal-tarefa-preenchido.png)
@@ -464,15 +434,6 @@ Com dados inseridos, o modal demonstra:
 - **Textarea expansível** para descrições longas
 - **Preview visual** das seleções realizadas
 
-#### **Modal Editar Tarefa**
-![Modal Editar Tarefa](screenshots/09-modal-editar-tarefa.png)
-
-No modo de edição:
-- **Título alterado** para "Editar Tarefa"
-- **Campos pré-preenchidos** com dados existentes da tarefa
-- **Preservação de referências** mantendo ID da tarefa
-- **Botão "Atualizar"** substituindo "Salvar" para clareza da ação
-- **Possibilidade de cancelar** retornando ao estado anterior
 
 #### 🏷️ Gerenciamento de Categorias
 
@@ -490,26 +451,6 @@ A visualização de categorias apresenta:
 - **Ações rápidas** para editar e excluir cada categoria
 - **Botão "Nova Categoria"** em posição destacada
 
-#### **Categorias - Card Individual**
-![Categorias Card Individual](screenshots/11-categorias-card.png)
-
-Cada card de categoria exibe:
-- **Barra colorida superior** (4px) na cor personalizada da categoria
-- **Nome da categoria** em tipografia destacada
-- **Descrição explicativa** em texto secundário
-- **Contador de tarefas** associadas à categoria
-- **Botões de ação** com ícones intuitivos
-- **Efeito hover** com elevação sutil
-
-#### **Modal Nova Categoria**
-![Modal Nova Categoria](screenshots/12-modal-categoria.png)
-
-O formulário de categoria inclui:
-- **Campo nome** obrigatório com validação
-- **Seletor de cor** com paleta pré-definida e opção personalizada
-- **Campo descrição** opcional para contexto adicional
-- **Preview da cor** selecionada em tempo real
-- **Validação de unicidade** do nome da categoria
 
 #### **Modal Editar Categoria**
 ![Modal Editar Categoria](screenshots/13-modal-editar-categoria.png)
