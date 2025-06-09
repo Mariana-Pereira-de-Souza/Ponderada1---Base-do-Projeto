@@ -368,7 +368,11 @@ O desenvolvimento do frontend do UniPlanner foi realizado utilizando **EJS** com
 A interface de autenticação apresenta design centralizado com fundo gradiente azul, proporcionando uma entrada visual atrativa ao sistema.
 
 #### **Login - Tela Limpa**
-![Login Tela Limpa](screenshots/01-login-limpa.png)
+
+<div align="center">
+<sub> Figura x - Login </sub>
+<img src="../assets/tela-login-limpa.png" width="100%">
+</div>
 
 A tela inicial de login apresenta:
 - Logo "UniPlanner" centralizado com tipografia moderna
@@ -378,7 +382,11 @@ A tela inicial de login apresenta:
 - Fundo com gradiente azul (#3498db para #2980b9) criando profundidade visual
 
 #### **Login - Com Erro**
-![Login Com Erro](screenshots/02-login-erro.png)
+
+<div align="center">
+<sub> Figura x - Login </sub>
+<img src="../assets/tela-login-erro.png" width="100%">
+</div>
 
 Quando credenciais inválidas são inseridas, o sistema exibe:
 - Mensagem de erro em vermelho destacando "Email ou senha inválidos"
