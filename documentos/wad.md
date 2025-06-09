@@ -489,7 +489,11 @@ Na edição de categorias:
 Interface administrativa disponível apenas para usuários com perfil de administrador, permitindo gestão completa dos usuários do sistema.
 
 #### **Usuários - Tabela**
-![Usuários Tabela](screenshots/14-usuarios-tabela.png)
+
+<div align="center">
+<sub> Figura x - Dashboard - Vazio </sub>
+<img src="../assets/usuarios-geral.png" width="100%">
+</div
 
 A interface administrativa apresenta:
 - **Tabela responsiva** com informações essenciais dos usuários
@@ -500,7 +504,11 @@ A interface administrativa apresenta:
 - **Paginação** quando necessária para grandes volumes
 
 #### **Usuários - Busca Ativa**
-![Usuários Busca Ativa](screenshots/15-usuarios-busca.png)
+
+<div align="center">
+<sub> Figura x - Dashboard - Vazio </sub>
+<img src="../assets/usuarios-busca.png" width="100%">
+</div
 
 O sistema de busca oferece:
 - **Filtro em tempo real** por nome ou email
@@ -510,7 +518,11 @@ O sistema de busca oferece:
 - **Manutenção das ações** mesmo com filtros aplicados
 
 #### **Modal Novo Usuário**
-![Modal Novo Usuário](screenshots/16-modal-usuario.png)
+
+<div align="center">
+<sub> Figura x - Dashboard - Vazio </sub>
+<img src="../assets/usuarios-novo.png" width="100%">
+</div
 
 O formulário de criação inclui:
 - **Campos obrigatórios**: Nome, Email, Senha
@@ -521,7 +533,10 @@ O formulário de criação inclui:
 - **Confirmação de senha** para evitar erros
 
 #### **Modal Editar Usuário**
-![Modal Editar Usuário](screenshots/17-modal-editar-usuario.png)
+<div align="center">
+<sub> Figura x - Dashboard - Vazio </sub>
+<img src="../assets/usuarios-editar.png" width="100%">
+</div
 
 Na edição de usuários:
 - **Dados pré-carregados** do usuário selecionado
