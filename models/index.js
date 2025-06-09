@@ -1,6 +1,6 @@
 const { Sequelize } = require('sequelize');
 
-const sequelize = new Sequelize('uniplanner', 'postgres', '12345678910', {
+const sequelize = new Sequelize('nome-do-seu-banco', 'seu-usuario', 'sua-senha', {
   host: 'localhost',
   dialect: 'postgres',
 });
