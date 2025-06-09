@@ -357,9 +357,209 @@ Essa API representa a camada de Controller da arquitetura MVC, intermediando a i
 
 ### 3.7 Interface e Navegação (Semana 07)
 
-*Descreva e ilustre aqui o desenvolvimento do frontend do sistema web, explicando brevemente o que foi entregue em termos de código e sistema. Utilize prints de tela para ilustrar.*
+O desenvolvimento do frontend do UniPlanner foi realizado utilizando **EJS** como template engine, **CSS3** para estilização e **JavaScript vanilla** para interatividade. O sistema apresenta uma interface moderna e responsiva, focada na usabilidade e experiência do usuário para gerenciamento de tarefas acadêmicas.
 
----
+#### Interfaces Desenvolvidas
+
+#### 🔐 Tela de Login
+
+**Arquivo**: `views/login.ejs`
+
+A interface de autenticação apresenta design centralizado com fundo gradiente azul, proporcionando uma entrada visual atrativa ao sistema.
+
+#### **Login - Tela Limpa**
+![Login Tela Limpa](screenshots/01-login-limpa.png)
+
+A tela inicial de login apresenta:
+- Logo "UniPlanner" centralizado com tipografia moderna
+- Formulário minimalista com campos de email e senha
+- Botão "Entrar" com destaque visual
+- Texto de ajuda com credenciais de exemplo para facilitar o acesso
+- Fundo com gradiente azul (#3498db para #2980b9) criando profundidade visual
+
+#### **Login - Com Erro**
+![Login Com Erro](screenshots/02-login-erro.png)
+
+Quando credenciais inválidas são inseridas, o sistema exibe:
+- Mensagem de erro em vermelho destacando "Email ou senha inválidos"
+- Campos do formulário mantêm os valores digitados
+- Feedback visual imediato sem necessidade de recarregar a página
+- Preservação da experiência do usuário com validação client-side
+
+#### 🏠 Dashboard Principal - Gerenciamento de Tarefas
+
+**Arquivo**: `views/index.ejs`
+
+O dashboard principal é o coração do sistema, onde os usuários gerenciam suas tarefas acadêmicas de forma intuitiva e eficiente.
+
+#### **Dashboard - Visão Geral**
+![Dashboard Visão Geral](screenshots/03-dashboard-geral.png)
+
+A interface principal apresenta:
+- **Header fixo** com navegação horizontal: logo, menu (Tarefas, Usuários, Categorias) e informações do usuário
+- **Título da seção** "Minhas Tarefas" com botão "Nova Tarefa" em destaque
+- **Sistema de filtros** com dropdowns para Status, Categoria e campo de busca em tempo real
+- **Grid responsivo** organizando tarefas em cards com layout de 3 colunas em desktop
+- **Cards de tarefas** com informações completas: título, categoria colorida, descrição, data de vencimento, prioridade e ações
+
+#### **Dashboard - Card em Destaque**
+![Dashboard Card Destaque](screenshots/04-dashboard-card.png)
+
+Cada card de tarefa apresenta:
+- **Efeito hover** com elevação sutil (transform: translateY(-5px))
+- **Barra colorida** no topo indicando a categoria
+- **Hierarquia visual** clara: título em destaque, descrição secundária
+- **Badges de prioridade** com cores diferenciadas (Alta: vermelho, Média: laranja, Baixa: verde)
+- **Botões de ação** intuitivos: editar (✏️), excluir (🗑️) e marcar como concluída (✅)
+- **Data de vencimento** formatada e destacada quando próxima do prazo
+
+#### **Dashboard - Filtros Ativos**
+![Dashboard Filtros Ativos](screenshots/05-dashboard-filtros.png)
+
+O sistema de filtros oferece:
+- **Filtro por Status**: Todas, Pendentes, Concluídas com atualização instantânea
+- **Filtro por Categoria**: Dropdown dinâmico carregado do banco de dados
+- **Busca textual**: Pesquisa em tempo real por título ou descrição
+- **Combinação de filtros**: Múltiplos filtros podem ser aplicados simultaneamente
+- **Feedback visual**: Cards filtrados com transições suaves de entrada/saída
+
+#### **Dashboard - Estado Vazio**
+![Dashboard Estado Vazio](screenshots/06-dashboard-vazio.png)
+
+Quando não há tarefas ou filtros não retornam resultados:
+- **Mensagem informativa** explicando o estado atual
+- **Call-to-action** direcionando para criação de nova tarefa
+- **Ilustração ou ícone** tornando o estado vazio menos intimidador
+- **Manutenção da estrutura** da interface para consistência visual
+
+#### ➕ Modal de Gerenciamento de Tarefas
+
+As operações de criação e edição de tarefas são realizadas através de modais sobrepostos, mantendo o contexto da página principal.
+
+#### **Modal Nova Tarefa - Vazio**
+![Modal Nova Tarefa Vazio](screenshots/07-modal-tarefa-vazio.png)
+
+O modal de criação apresenta:
+- **Overlay escurecido** focando atenção no formulário
+- **Título claro** "Nova Tarefa" identificando a ação
+- **Formulário estruturado** com campos organizados logicamente
+- **Campos obrigatórios** marcados visualmente
+- **Botões de ação** "Cancelar" e "Salvar" com hierarquia visual clara
+
+#### **Modal Nova Tarefa - Preenchido**
+![Modal Nova Tarefa Preenchido](screenshots/08-modal-tarefa-preenchido.png)
+
+Com dados inseridos, o modal demonstra:
+- **Validação em tempo real** dos campos obrigatórios
+- **Dropdowns funcionais** para categoria e prioridade
+- **Seletor de data** com formato brasileiro (DD/MM/AAAA)
+- **Textarea expansível** para descrições longas
+- **Preview visual** das seleções realizadas
+
+#### **Modal Editar Tarefa**
+![Modal Editar Tarefa](screenshots/09-modal-editar-tarefa.png)
+
+No modo de edição:
+- **Título alterado** para "Editar Tarefa"
+- **Campos pré-preenchidos** com dados existentes da tarefa
+- **Preservação de referências** mantendo ID da tarefa
+- **Botão "Atualizar"** substituindo "Salvar" para clareza da ação
+- **Possibilidade de cancelar** retornando ao estado anterior
+
+#### 🏷️ Gerenciamento de Categorias
+
+**Arquivo**: `views/categories/index.ejs`
+
+A interface de categorias utiliza cards visuais para facilitar a identificação e organização das diferentes classificações de tarefas.
+
+#### **Categorias - Grid Completo**
+![Categorias Grid Completo](screenshots/10-categorias-grid.png)
+
+A visualização de categorias apresenta:
+- **Layout em grid responsivo** adaptando-se ao tamanho da tela
+- **Cards coloridos** com barra superior na cor da categoria
+- **Informações organizadas**: nome da categoria, descrição e contador de tarefas
+- **Ações rápidas** para editar e excluir cada categoria
+- **Botão "Nova Categoria"** em posição destacada
+
+#### **Categorias - Card Individual**
+![Categorias Card Individual](screenshots/11-categorias-card.png)
+
+Cada card de categoria exibe:
+- **Barra colorida superior** (4px) na cor personalizada da categoria
+- **Nome da categoria** em tipografia destacada
+- **Descrição explicativa** em texto secundário
+- **Contador de tarefas** associadas à categoria
+- **Botões de ação** com ícones intuitivos
+- **Efeito hover** com elevação sutil
+
+#### **Modal Nova Categoria**
+![Modal Nova Categoria](screenshots/12-modal-categoria.png)
+
+O formulário de categoria inclui:
+- **Campo nome** obrigatório com validação
+- **Seletor de cor** com paleta pré-definida e opção personalizada
+- **Campo descrição** opcional para contexto adicional
+- **Preview da cor** selecionada em tempo real
+- **Validação de unicidade** do nome da categoria
+
+#### **Modal Editar Categoria**
+![Modal Editar Categoria](screenshots/13-modal-editar-categoria.png)
+
+Na edição de categorias:
+- **Dados pré-carregados** da categoria selecionada
+- **Seletor de cor** mostrando a cor atual
+- **Aviso sobre impacto** nas tarefas associadas
+- **Opção de manter** ou alterar configurações existentes
+
+#### 👥 Gerenciamento de Usuários (Administrador)
+
+**Arquivo**: `views/users/index.ejs`
+
+Interface administrativa disponível apenas para usuários com perfil de administrador, permitindo gestão completa dos usuários do sistema.
+
+#### **Usuários - Tabela**
+![Usuários Tabela](screenshots/14-usuarios-tabela.png)
+
+A interface administrativa apresenta:
+- **Tabela responsiva** com informações essenciais dos usuários
+- **Colunas organizadas**: Nome, Email, Função, Status, Ações
+- **Badges coloridos** diferenciando funções (Admin: azul, User: verde)
+- **Indicadores de status** (Ativo: verde, Inativo: vermelho)
+- **Ações por linha** para editar e excluir usuários
+- **Paginação** quando necessária para grandes volumes
+
+#### **Usuários - Busca Ativa**
+![Usuários Busca Ativa](screenshots/15-usuarios-busca.png)
+
+O sistema de busca oferece:
+- **Filtro em tempo real** por nome ou email
+- **Highlight dos termos** encontrados nos resultados
+- **Contador de resultados** exibindo quantos usuários foram encontrados
+- **Limpeza rápida** da busca com botão dedicado
+- **Manutenção das ações** mesmo com filtros aplicados
+
+#### **Modal Novo Usuário**
+![Modal Novo Usuário](screenshots/16-modal-usuario.png)
+
+O formulário de criação inclui:
+- **Campos obrigatórios**: Nome, Email, Senha
+- **Seleção de função**: Dropdown com opções Admin/User
+- **Toggle de status**: Ativo/Inativo com switch visual
+- **Validação de email** em tempo real
+- **Geração de senha** com critérios de segurança
+- **Confirmação de senha** para evitar erros
+
+#### **Modal Editar Usuário**
+![Modal Editar Usuário](screenshots/17-modal-editar-usuario.png)
+
+Na edição de usuários:
+- **Dados pré-carregados** do usuário selecionado
+- **Campo senha opcional** (vazio = manter atual)
+- **Restrições de edição** (admin não pode remover próprio acesso)
+- **Histórico de atividade** quando disponível
+- **Confirmação para alterações** críticas de função
+
 
 ## <a name="c4"></a>4. Desenvolvimento da Aplicação Web (Semana 8)
 
