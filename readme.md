@@ -3,6 +3,7 @@
 
 **UniPlanner** é um sistema web de gerenciamento de tarefas desenvolvido para auxiliar estudantes universitários na organização de suas rotinas acadêmicas e pessoais. O projeto faz parte de uma atividade prática da faculdade e integra frontend, backend e banco de dados em uma única aplicação.
 
+###  Vídeo UniPlanner:[ Assista ao vídeo da Uniplanner](https://youtu.be/g7ld8BgNTZY?si=xbbcOQ--mjgr7JLc)
 ---
 
 ## 💡 Descrição do sistema
