@@ -555,14 +555,52 @@ Na edição de usuários:
 
 ### 4.2 Conclusões e Trabalhos Futuros (Semana 8)
 
-*Indique pontos fortes e pontos a melhorar de maneira geral.*
-*Relacione também quaisquer outras ideias que você tenha para melhorias futuras.*
 
+#### Pontos Fortes do Projeto
+
+- Implementação completa da arquitetura **MVC (Model-View-Controller)**, facilitando a organização e manutenção do código.
+- Integração bem-sucedida entre **Node.js**, **Express**, **EJS** e **PostgreSQL (Supabase)**.
+- Funcionalidades principais (cadastro, listagem, atualização e exclusão) funcionando corretamente e com comunicação eficiente entre front-end e back-end.
+- Estrutura de rotas e controllers clara e de fácil entendimento.
+- Front-end responsivo e com feedback visual para o usuário.
+
+#### Pontos a Melhorar
+
+- Melhorias na validação de dados no front-end antes de enviar para o back-end.
+- Inclusão de mensagens de erro mais detalhadas para facilitar o diagnóstico de problemas.
+- Melhor organização dos arquivos estáticos (CSS e JS) para evitar duplicidade e excesso de código repetitivo.
+- Melhorias no layout visual para deixar a interface mais atraente e moderna.
+
+#### Trabalhos Futuros e Melhorias Sugeridas
+
+- Implementar autenticação de usuários (login e cadastro com controle de sessão).
+- Adicionar paginação e filtros nas listagens para melhorar a usabilidade.
+- Criar testes automatizados para garantir a integridade do código.
+- Integrar com APIs externas para ampliar funcionalidades.
 
 
 ## <a name="c5"></a>5. Referências
 
-_Incluir as principais referências de seu projeto, para que o leitor possa consultar caso ele se interessar em aprofundar._<br>
 
----
----
+#### Tecnologias Utilizadas
+- [Node.js - Documentação Oficial](https://nodejs.org/en/docs/)
+- [Express.js - Guia Oficial](https://expressjs.com/)
+- [EJS - Embedded JavaScript Templates](https://ejs.co/)
+- [PostgreSQL - Guia Oficial](https://www.postgresql.org/docs/)
+- [MDN Web Docs - HTML, CSS, JS](https://developer.mozilla.org/)
+
+#### Conceitos de Projeto
+
+- **Personas**  
+  Entenda o que são personas e como usá-las em projetos:  
+  [https://rockcontent.com/br/blog/persona/](https://rockcontent.com/br/blog/persona/)
+
+- **User Stories**  
+  Guia para escrever boas histórias de usuário com critérios de aceite:  
+  [https://www.atlassian.com/agile/project-management/user-stories](https://www.atlassian.com/agile/project-management/user-stories)
+
+- **Modelagem de Banco de Dados**  
+  Introdução à modelagem de dados e exemplos de modelagem relacional:  
+  [https://www.luiztools.com.br/post/entendendo-modelagem-de-dados-com-exemplos/](https://www.luiztools.com.br/post/entendendo-modelagem-de-dados-com-exemplos/)  
+  [https://www.devmedia.com.br/guia/modelagem-de-dados/37799](https://www.devmedia.com.br/guia/modelagem-de-dados/37799)
+
