@@ -550,8 +550,8 @@ Na edição de usuários:
 
 ### 4.1 Demonstração do Sistema Web (Semana 8)
 
-*VIDEO: Insira o link do vídeo demonstrativo nesta seção*
-*Descreva e ilustre aqui o desenvolvimento do sistema web completo, explicando brevemente o que foi entregue em termos de código e sistema. Utilize prints de tela para ilustrar.*
+[Assista ao vídeo da Uniplanner](https://youtu.be/g7ld8BgNTZY?si=xbbcOQ--mjgr7JLc)
+
 
 ### 4.2 Conclusões e Trabalhos Futuros (Semana 8)
 
